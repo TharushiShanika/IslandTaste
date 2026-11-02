@@ -1,0 +1,4 @@
+import { useParams } from 'react-router-dom'
+import { offers } from '../data/siteData'
+import { ButtonLink, PageHero } from '../components/Shared'
+export default function OfferDetails(){const {id}=useParams();const offer=offers.find(o=>o.id===id)||offers[1];return <><PageHero eyebrow="EXCLUSIVE OFFER" title={offer.name} text={offer.description} image={offer.image}/><section className="container split-section section-space"><img src={offer.image} alt={offer.name}/><div><span className="eyebrow">{offer.discount} SPECIAL SAVING</span><h2>{offer.name}</h2><p>{offer.description}</p><h3>Offer Includes</h3><ul className="check-list">{offer.details.map(x=><li key={x}>{x}</li>)}</ul><div className="promo-large"><span>Your promo code</span><b>{offer.code}</b></div><ButtonLink to="/booking">Book This Offer</ButtonLink><p className="muted">Terms and conditions apply. Offer is subject to availability and selected dates.</p></div></section></>}
