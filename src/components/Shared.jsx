@@ -22,12 +22,84 @@ export function Header() {
   </div></header>
 }
 export function Footer() {
-  return <footer className="site-footer"><div className="container footer-grid">
-    <div className="footer-brand"><div className="footer-logo">ISLAND<br/>TASTE<small>BY MAHAMERUWA</small></div><p>A complete resort experience blending comfortable accommodation, delicious dining, sports, leisure and adventure.</p><a href="https://maps.google.com/?q=Island+Taste+Sri+Lanka" target="_blank" rel="noreferrer"><MapPin size={16}/> Find us on Google Map <ArrowRight size={15}/></a></div>
-    <div><h3>Quick Links</h3>{navItems.map(([n,p])=><Link key={p} to={p}>{n === 'About' ? 'About Us' : n}</Link>)}</div>
-    <div><h3>Our Services</h3><Link to="/booking">Online Booking</Link><Link to="/booking">Reservations</Link><Link to="/dining">Dine In</Link><Link to="/dining">Take Away</Link><Link to="/dining">Delivery</Link><Link to="/events">Sports & Leisure</Link><Link to="/events">Adventure Experiences</Link></div>
-    <div className="footer-contact"><h3>Contact Us</h3><p><Phone size={15}/> +94 31 2210670</p><p><Mail size={15}/> islandtastemahameruwa@gmail.com</p><p><MapPin size={15}/> No:100/15, Wonderland Park,<br/>Palagathure, Kochchikade</p><h3 className="follow-title">Follow Us</h3><div className="socials"><a href="#facebook" aria-label="Facebook"><Facebook/></a><a href="#instagram" aria-label="Instagram"><Instagram/></a><a href="#youtube" aria-label="YouTube"><Youtube/></a></div></div>
-  </div><div className="container footer-bottom"><span>© 2026 Island Taste Resort & Restaurant. All Rights Reserved.</span><span><Link to="/contact">Privacy Policy</Link> | <Link to="/contact">Terms & Conditions</Link> | <Link to="/contact">Cancellation Policy</Link></span></div></footer>
+  return (
+    <footer className="site-footer">
+      <div className="container footer-grid">
+
+        <div className="footer-brand">
+          <div className="footer-logo">
+            <img
+              src="/assets/footer_image.png"
+              alt="Island Taste by Mahameruwa"
+            />
+          </div>
+
+          <p>
+            A complete resort experience blending comfortable accommodation,
+            delicious dining, sports, leisure and adventure.
+          </p>
+
+          <a
+            href="https://maps.google.com/?q=Island+Taste+Sri+Lanka"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MapPin size={16} />
+            Find us on Google Map
+            <ArrowRight size={15} />
+          </a>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          {navItems.map(([n, p]) => (
+            <Link key={p} to={p}>
+              {n === 'About' ? 'About Us' : n}
+            </Link>
+          ))}
+        </div>
+
+        <div>
+          <h3>Our Services</h3>
+          <Link to="/booking">Online Booking</Link>
+          <Link to="/booking">Reservations</Link>
+          <Link to="/dining">Dine In</Link>
+          <Link to="/dining">Take Away</Link>
+          <Link to="/dining">Delivery</Link>
+          <Link to="/events">Sports & Leisure</Link>
+          <Link to="/events">Adventure Experiences</Link>
+        </div>
+
+        <div className="footer-contact">
+          <h3>Contact Us</h3>
+          <p><Phone size={15} /> +94 31 2210670</p>
+          <p><Mail size={15} /> islandtastemahameruwa@gmail.com</p>
+          <p>
+            <MapPin size={15} />
+            No:100/15, Wonderland Park,
+            <br />Palagathure, Kochchikade
+          </p>
+
+          <h3 className="follow-title">Follow Us</h3>
+          <div className="socials">
+            <a href="#facebook" aria-label="Facebook"><Facebook /></a>
+            <a href="#instagram" aria-label="Instagram"><Instagram /></a>
+            <a href="#youtube" aria-label="YouTube"><Youtube /></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="container footer-bottom">
+        <span>© 2026 Island Taste Resort & Restaurant. All Rights Reserved.</span>
+        <span>
+          <Link to="/contact">Privacy Policy</Link> |
+          <Link to="/contact">Terms & Conditions</Link> |
+          <Link to="/contact">Cancellation Policy</Link>
+        </span>
+      </div>
+    </footer>
+  );
 }
 export function Layout({ children }) { return <><Header/><main>{children}</main><Footer/></> }
 export function BookingBar({ onSearch }) {
