@@ -15,7 +15,7 @@ export function PageHero({ eyebrow, title, text, image = photos.hero, compact = 
 export function Header() {
   const [open, setOpen] = useState(false)
   return <header className="site-header"><div className="container nav-wrap">
-    <Link to="/" className="brand" aria-label="Island Taste home"><img src="/assets/island-taste-logo.png" alt="Island Taste" /><span>ISLAND<br/>TASTE</span></Link>
+    <Link to="/" className="brand" aria-label="Island Taste home"><img src={`${import.meta.env.BASE_URL}assets/island-taste-logo.png`} alt="Island Taste" /><span>ISLAND<br/>TASTE</span></Link>
     <button className="mobile-toggle" onClick={() => setOpen(!open)} aria-label="Toggle navigation">{open ? <X/> : <Menu/>}</button>
     <nav className={open ? 'nav-links open' : 'nav-links'}>{navItems.map(([label, path]) => <Link key={path} to={path} onClick={() => setOpen(false)}>{label}</Link>)}</nav>
     <div className="nav-actions"><a className="phone-link" href="tel:+94312210670"><Phone size={16}/> +94 31 2210670</a><ButtonLink to="/booking">Book Now</ButtonLink></div>
@@ -29,7 +29,7 @@ export function Footer() {
         <div className="footer-brand">
           <div className="footer-logo">
             <img
-              src="/assets/footer_image.png"
+              src={`${import.meta.env.BASE_URL}assets/footer_image.png`}
               alt="Island Taste by Mahameruwa"
             />
           </div>

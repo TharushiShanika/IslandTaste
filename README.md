@@ -21,6 +21,15 @@ Responsive React + Vite frontend based on the supplied Island Taste UI designs.
    On Windows PowerShell, use `Copy-Item .env.example .env` instead of `cp`.
 5. Open the local URL printed by Vite (normally http://localhost:5173).
 
+## Deploy to GitHub Pages
+
+The GitHub Actions workflow builds and publishes the site whenever changes are
+pushed to `main`. After the first successful workflow run, the website will be
+available at https://tharushishanika.github.io/IslandTaste/.
+
+In the repository's **Settings → Pages**, set the build and deployment source to
+**GitHub Actions** if it is not already selected.
+
 ## Pages included
 - Home
 - Accommodation
