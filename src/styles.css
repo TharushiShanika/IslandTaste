@@ -2039,3 +2039,15 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .floating-offer-tab, .floating-whatsapp { transition: none; }
 }
+
+  
+
+
+  /* Center the copyright / bottom bar text */
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
